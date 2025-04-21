@@ -1,0 +1,4 @@
+street,city,postalCode,country,customerId,customerDocument
+Main St 123,New York,10001,USA,f8a7e3a2-ec55-4ab3-946a-1f6b7b024f87,1001
+Sunset Blvd 456,Los Angeles,90001,USA,b2c9a1d4-45a0-4fd8-9137-d5c9484126ea,1002
+Maple Ave 789,Chicago,60601,USA,7c4d44b5-1a24-4e8c-b4e2-3cbf35d79c93,1003
