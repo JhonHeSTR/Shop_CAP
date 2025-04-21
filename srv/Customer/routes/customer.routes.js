@@ -9,5 +9,7 @@ module.exports = cds.service.impl(async function () {
 
     // this.before('READ', customers, controller.before_read);
 
-    this.on('CREATE', customers, controller.on_create)
+    this.on('CREATE', customers, controller.on_create);
+
+    this.on('getAddresses', controller.getAddresses);
 });

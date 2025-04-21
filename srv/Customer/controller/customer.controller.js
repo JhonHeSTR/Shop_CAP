@@ -56,6 +56,46 @@ class CustomerController {
         }
     }
 
+    async getAddresses(req) {
+
+        const { Customers: customers } = this.entities;
+        const { document, ID } = req.data;
+
+        try {
+
+            const filters = [
+                { key: "ID", value: ID },
+                { key: "document", value: document }
+            ];
+
+            const filter = filters.find(f => f.value);
+
+            if (!filter) throw new Error('The ID or document is required to perform the query');
+
+            console.log(`${filter.key}: ${filter.value}`);
+
+            const result = await SELECT.from(customers)
+                .columns(a => {
+                    a.address(b => {
+                        b.ID,
+                            b.street,
+                            b.city,
+                            b.postalCode,
+                            b.country,
+                            b.customerId,
+                            b.customerDocument
+                    })
+                })
+                .where(`${filter.key} = '${filter.value}'`);
+
+            return result;
+
+        } catch (err) {
+            console.error('Transaction failed, rolled back:', err.message);
+            return { success: false, error: err.message };
+        }
+    }
+
     // async after(req) {
 
     //  }
