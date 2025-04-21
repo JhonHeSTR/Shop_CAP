@@ -30,13 +30,14 @@ type PhoneType : Integer enum {
 }
 
 entity Address {
-    street           : String;
-    city             : String;
-    postalCode       : String;
-    country          : String;
-    customer         : Association to Customer
-                           on  customer.ID       = customerId
-                           and customer.document = customerDocument;
-    customerId       : UUID;
-    customerDocument : String(10);
+    key ID               : UUID;
+        street           : String;
+        city             : String;
+        postalCode       : String;
+        country          : String;
+        customer         : Association to Customer
+                               on  customer.ID       = customerId
+                               and customer.document = customerDocument;
+        customerId       : UUID;
+        customerDocument : String(10);
 }
