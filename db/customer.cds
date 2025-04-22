@@ -1,5 +1,7 @@
 namespace db.customer;
 
+using {db.order as order} from './order';
+
 entity Customer {
     key ID        : UUID;
     key document  : String(10);
@@ -10,6 +12,10 @@ entity Customer {
         email     : String(100) @mandatory;
         address   : Composition of many Address
                         on address.customer = $self;
+        // order     : Association to many order.Order
+        //                 on  order.customerId       = $self.ID
+        //                 and order.customerDocument = $self.document;
+        order: Association to many order.Order on order.customer = $self;
 }
 
 entity Phone {

@@ -1,0 +1,4 @@
+ID,customerId,customerDocument,total,date,createdAt,createdBy,modifiedAt,modifiedBy
+1aa1c111-aaaa-4aaa-aaaa-aaaaaaaaaaa1,f8a7e3a2-ec55-4ab3-946a-1f6b7b024f87,1001,1707.91,2025-04-20,2025-04-22T17:33:39.269383,admin,2025-04-22T17:33:39.269383,admin
+2bb2c222-bbbb-4bbb-bbbb-bbbbbbbbbbb2,b2c9a1d4-45a0-4fd8-9137-d5c9484126ea,1002,1423.63,2025-04-21,2025-04-22T17:33:39.269383,admin,2025-04-22T17:33:39.269383,admin
+3cc3d333-cccc-4ccc-cccc-ccccccccccc3,7c4d44b5-1a24-4e8c-b4e2-3cbf35d79c93,1003,589.34,2025-04-22,2025-04-22T17:33:39.269383,admin,2025-04-22T17:33:39.269383,admin

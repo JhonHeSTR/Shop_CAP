@@ -6,6 +6,8 @@ using {
     sap.common.CodeList
 } from '@sap/cds/common';
 
+using {db.order as order} from './order';
+
 entity Product : cuid, managed {
     name          : localized String(30);
     description   : localized String(100);
@@ -17,6 +19,8 @@ entity Product : cuid, managed {
     status_code   : Integer;
     status        : Association to Status
                         on status.code = status_code;
+    orderDetail   : Association to many order.OrderDetail
+                        on orderDetail.product = $self;
 }
 
 entity Category : CodeList {
