@@ -16,11 +16,11 @@ entity Order : cuid, managed {
                            and customer.document = customerDocument;
     total            : Double;
     date             : Date;
-    orderDetail      : Association to many OrderDetail
-                           on orderDetail.order = $self;
+    detail      : Association to many Detail
+                           on detail.order = $self;
 }
 
-entity OrderDetail : cuid, managed {
+entity Detail : cuid, managed {
     product   : Association to product.Product;
     order     : Association to Order;
     quantity  : Integer;

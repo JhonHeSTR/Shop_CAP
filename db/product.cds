@@ -19,7 +19,7 @@ entity Product : cuid, managed {
     status_code   : Integer;
     status        : Association to Status
                         on status.code = status_code;
-    orderDetail   : Association to many order.OrderDetail
+    orderDetail   : Association to many order.Detail
                         on orderDetail.product = $self;
 }
 
