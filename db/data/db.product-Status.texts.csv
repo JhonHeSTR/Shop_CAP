@@ -1,0 +1,8 @@
+code,locale,name,descr
+1,es,Disponible,
+1,en,Available
+2,es,Agotado,
+2,en,OutOfStock
+3,es,Descontinuado,
+3,en,Discontinued
+

@@ -1,1 +1,2 @@
-using from './customer.cds';
+using from './customer';
+using from './product';
