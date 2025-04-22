@@ -6,6 +6,7 @@ service CustomerService @(
 ) {
     entity Customers as projection on customer.Customer;
     entity Phones    as projection on customer.Phone;
+    entity Address as projection on customer.Address;
 
     type AddressInfo {
         ID               : UUID;
