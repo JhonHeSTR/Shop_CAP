@@ -28,7 +28,8 @@ class OrderController {
                 );
 
                 if (stock[0].stock < product.quantity) {
-                    throw new Error('Insufficient stock for product ' + product.ID);
+                    req.error(400, 'Insufficient stock for product ' + product.ID);
+                    // throw new Error('Insufficient stock for product ' + product.ID);
                 }
             }
 
