@@ -1,0 +1,11 @@
+code,locale,name,descr
+1,es,Pendiente,La factura ha sido creada pero no pagada aún
+1,en,Pending,Invoice has been created but not yet paid
+2,es,Pagada,La factura ha sido pagada completamente
+2,en,Paid,Invoice has been fully paid
+3,es,Vencida,La factura está vencida
+3,en,Overdue,Invoice is past its due date
+4,es,Cancelada,La factura ha sido cancelada
+4,en,Cancelled,Invoice has been cancelled
+5,es,Reembolsada,El monto de la factura ha sido reembolsado
+5,en,Refunded,Invoice amount has been refunded

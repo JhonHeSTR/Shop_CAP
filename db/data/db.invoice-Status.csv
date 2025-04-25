@@ -1,0 +1,6 @@
+code,name,descr
+1,Pending,Invoice has been created but not yet paid
+2,Paid,Invoice has been fully paid
+3,Overdue,Invoice is past its due date
+4,Cancelled,Invoice has been cancelled
+5,Refunded,Invoice amount has been refunded
