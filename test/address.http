@@ -1,0 +1,17 @@
+
+###
+
+DELETE {{BASE_URL}}customer/Addresses(ID=781a9529-9ef3-4ee5-83e6-8982f3d61a6c) 
+Authorization: Basic admin:abc123
+Content-Type: application/json
+
+###
+
+GET {{BASE_URL}}customer/getAddresses 
+Authorization: Basic admin:abc123
+Content-Type: application/json
+
+{
+    "ID": "b2c9a1d4-45a0-4fd8-9137-d5c9484126ea",
+    "document": "1052"
+}

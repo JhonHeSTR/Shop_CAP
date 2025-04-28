@@ -1,0 +1,51 @@
+###
+
+POST {{BASE_URL}}order/Orders
+Authorization: Basic admin:abc123
+Content-Type: application/json
+
+{
+    "customerId": "f8a7e3a2-ec55-4ab3-946a-1f6b7b024f87",
+    "customerDocument": "1001",
+    "total": 0,
+    "date": "2025-04-28",
+    "detail": [
+        {
+            "product_ID": "081d789c-1ab7-4a8d-9fee-47794eac81b0",
+            "quantity": 3,
+            "unitPrice": 366.16
+        },
+        {
+            "product_ID": "028930ba-b252-49c1-b471-4ae242762087",
+            "quantity": 2,
+            "unitPrice": 954.23
+        }
+    ]
+}
+
+###
+
+POST {{BASE_URL}}order/createOrder 
+Authorization: Basic admin:abc123
+Content-Type: application/json
+
+{
+    "payload": {
+        "customer": {
+            "ID": "f8a7e3a2-ec55-4ab3-946a-1f6b7b024f87",
+            "document": "1001"
+        },
+        "products": [
+            {
+                "ID": "081d789c-1ab7-4a8d-9fee-47794eac81b0",
+                "quantity": 3,
+                "unitPrice": 366.16
+            },
+            {
+                "ID": "028930ba-b252-49c1-b471-4ae242762087",
+                "quantity": 2,
+                "unitPrice": 954.23
+            }
+        ]
+    }
+}

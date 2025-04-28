@@ -1,0 +1,6 @@
+
+###
+
+DELETE {{BASE_URL}}customer/Phones(number=5559876543) 
+Authorization: Basic admin:abc123
+Content-Type: application/json

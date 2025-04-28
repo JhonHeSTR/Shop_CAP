@@ -1,0 +1,6 @@
+###
+
+GET {{BASE_URL}}product/groupByCategory
+Authorization: Basic admin:abc123
+Content-Type: application/json
+

@@ -1,0 +1,59 @@
+###
+
+POST {{BASE_URL}}customer/Customers 
+Authorization: Basic admin:abc123
+Content-Type: application/json
+
+{
+    "ID": "f8a7e3a7-ec55-4ab3-946a-1f6b7b024f87",
+    "document": "1009",
+    "firstName": "Pepe",
+    "lastName": "Test",
+    "email": "john.doe@example.com"
+}
+
+###
+
+POST {{BASE_URL}}customer/Customers 
+Authorization: Basic admin:abc123
+Content-Type: application/json
+
+{
+    "email": "Tav.jones@example.com",
+    "phones": [
+        {
+            "code": "+1",
+            "type": 3,
+            "number": "1451112242"
+        }
+    ],
+    "address": [
+        {
+            "city": "Chicago",
+            "street": "Maple Ave 789",
+            "country": "USA",
+            "postalCode": "60601"
+        },
+        {
+            "city": "Chicago",
+            "street": "Maple Ave 789",
+            "country": "USA",
+            "postalCode": "60601"
+        }
+    ],
+    "document": "1055",
+    "lastName": "Tav",
+    "firstName": "Mar"
+}
+
+###
+
+GET {{BASE_URL}}customer/Customers 
+Authorization: Basic admin:abc123
+Content-Type: application/json
+
+###
+
+DELETE {{BASE_URL}}customer/Customers(ID=7c4d44b5-1a24-4e8c-b4e2-3cbf35d79c93, document=1003)
+Authorization: Basic admin:abc123
+Content-Type: application/json

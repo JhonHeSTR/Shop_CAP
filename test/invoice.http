@@ -1,0 +1,12 @@
+###
+
+POST {{BASE_URL}}invoice/Invoices
+Authorization: Basic admin:abc123
+Content-Type: application/json
+
+{
+  "orderId": "e4cff3fa-a49f-4f6d-ac25-34f4955d9832",
+  "total": 3006.94,
+  "date": "2025-04-24",
+  "status_code": 1
+}

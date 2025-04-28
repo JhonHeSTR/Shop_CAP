@@ -16,7 +16,7 @@ entity Order : cuid, managed {
                            and customer.document = customerDocument;
     total            : Double;
     date             : Date;
-    detail      : Association to many Detail
+    detail      : Composition of many Detail
                            on detail.order = $self;
 }
 

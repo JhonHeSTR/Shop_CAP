@@ -13,5 +13,14 @@
     "plaintext": false,
     "markdown": false,
     "scminput": false
+  },
+  "rest-client.environmentVariables": {
+    "$shared": {},
+    "development": {
+      "BASE_URL": "http://localhost:4004/odata/v4/"
+    },
+    "production": {
+      "BASE_URL": "http://localhost:4004/odata/v4/"
+    }
   }
 }
