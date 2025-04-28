@@ -4,3 +4,21 @@ GET {{BASE_URL}}product/groupByCategory
 Authorization: Basic admin:abc123
 Content-Type: application/json
 
+###
+
+GET {{BASE_URL}}product/Products
+Authorization: Basic admin:abc123
+Content-Type: application/json
+
+###
+
+GET {{BASE_URL}}product/Products?$filter=ID eq 081d789c-1ab7-4a8d-9fee-47794eac81b0 or ID eq 028930ba-b252-49c1-b471-4ae242762087
+Authorization: Basic admin:abc123
+Content-Type: application/json
+
+###
+
+GET {{BASE_URL}}product/Products?$filter=ID in (081d789c-1ab7-4a8d-9fee-47794eac81b0,028930ba-b252-49c1-b471-4ae242762087)
+Authorization: Basic admin:abc123
+Content-Type: application/json
+

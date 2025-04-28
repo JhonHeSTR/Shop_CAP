@@ -1,7 +1,7 @@
 const { entities } = require('@sap/cds');
 const cds = require('@sap/cds');
 
-class OrderController {
+class createOrderController {
 
     constructor(entities) {
         this.entities = entities;
@@ -16,15 +16,15 @@ class OrderController {
 
     async before_create(req) {
 
-        const data = req.data;
+        const data = req.data.payload;
 
         try {
-            const products = data.detail;
+            const products = data.products;
 
             for (const product of products) {
 
                 const stock = await cds.run(
-                    SELECT.from(this.Products).columns('stock').where({ ID: product.product_ID })
+                    SELECT.from(this.Products).columns('stock').where({ ID: product.ID })
                 );
 
                 if (stock[0].stock < product.quantity) {
@@ -42,8 +42,9 @@ class OrderController {
     async on_create(req) {
 
         const tx = cds.tx(req);
-        const data = req.data;
-        const products = data.detail;
+        const data = req.data.payload;
+        const customer = data.customer;
+        const products = data.products;
 
         try {
             const orderId = cds.utils.uuid();
@@ -54,8 +55,8 @@ class OrderController {
                     ID: orderId,
                     date: new Date(),
                     total: 0,
-                    customerId: data.customerId,
-                    customerDocument: data.customerDocument
+                    customerId: customer.ID,
+                    customerDocument: customer.document
                 })
             );
 
@@ -67,7 +68,7 @@ class OrderController {
                     INSERT.into(this.Details).entries({
                         ID: detailId,
                         order_ID: orderId,
-                        product_ID: product.product_ID,
+                        product_ID: product.ID,
                         quantity: product.quantity,
                         unitPrice: product.unitPrice
                     })
@@ -81,7 +82,7 @@ class OrderController {
 
                 await tx.run(
                     UPDATE(this.Products)
-                        .set({ stock: { '-=': product.quantity } }).where({ ID: product.product_ID })
+                        .set({ stock: { '-=': product.quantity } }).where({ ID: product.ID })
                 );
             }
 
@@ -99,4 +100,4 @@ class OrderController {
     }
 }
 
-module.exports = OrderController;
+module.exports = createOrderController;
